@@ -26,6 +26,23 @@ for downstream node classification task.
 ```
 python classification.py
 ```
+```
+****************************Before debiasing****************************
+Attribute bias : 
+Sum of all Wasserstein distance value across feature dimensions: 0.017159402967899848
+Average of all Wasserstein distance value across feature dimensions: 0.0009533001648833249
+Structural bias : 
+Sum of all Wasserstein distance value across feature dimensions: 0.01976526986139568
+Average of all Wasserstein distance value across feature dimensions: 0.0010980705478553154
+****************************************************************************
+100%|██████████| 1000/1000 [01:23<00:00, 12.02it/s]
+Optimization Finished!
+Total time elapsed: 83.2267s
+Delta_{SP}: 0.0820449428186098
+Delta_{EO}: 0.0566079463128194
+F1: 0.7816419612314709
+AUC: 0.8678896786694952
+```
 
 (2-1) Debiasing attributed network with EDITS:
 ```
