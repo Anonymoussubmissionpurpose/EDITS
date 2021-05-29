@@ -101,12 +101,12 @@ for i in indices:
     features_preserve[:, i] = torch.zeros_like(features_preserve[:, i])
 X_debiased = features_preserve
 adj1 = sp.csr_matrix(A_debiased.detach().cpu().numpy())
-# print("****************************After debiasing****************************")  # threshold_proportion for GCN: {credit: 0.02, german: 0.25, bail: 0.013}
+# print("****************************After debiasing****************************")  # threshold_proportion for GCN: {credit: 0.02, german: 0.25, bail: 0.012}
 # features1 = X_debiased.cpu().float()[:, torch.nonzero(features.sum(axis=0)).squeeze()].detach()
 # if args.dataset != 'german':
 #     features1 = feature_norm(features1)
-# metric_wd(features1, binarize(adj1, adj_preserve, 0.013), sens.cpu(), 0.9, 0)
-# metric_wd(features1, binarize(adj1, adj_preserve, 0.013), sens.cpu(), 0.9, 2)
+# metric_wd(features1, binarize(adj1, adj_preserve, 0.012), sens.cpu(), 0.9, 0)
+# metric_wd(features1, binarize(adj1, adj_preserve, 0.012), sens.cpu(), 0.9, 2)
 # print("****************************************************************************")
 sp.save_npz('pre_processed/A_debiased.npz', adj1)
 torch.save(X_debiased, "pre_processed/X_debiased.pt")
