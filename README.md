@@ -4,12 +4,12 @@ Open source code for paper "EDITS: Modeling and Mitigating Data Biasfor Graph Ne
 ## Environment
 Experiments are carried out on a Titan RTX with Cuda 10.1. 
 
-Details can be found in requirements.txt.
+Library details can be found in requirements.txt.
 
 Notice: Cuda is enabled for default settings.
 
 ## Usage
-Default dataset for node classification and link prediction is ACM and BlogCatalog, respectively.
+Default dataset for node classification is bail. A pre-processed dataset for bail is provided in *pre_processed*.
 Use as
 ```
 python train.py
@@ -60,7 +60,7 @@ Average of all Wasserstein distance value across feature dimensions: 0.001098070
 100%|██████████| 500/500 [13:25<00:00,  1.61s/it]
 Preprocessed datasets saved.
 ```
-(2-2) Carry out node classification task with the output of EDITS:
+(2-2) Carry out node classification task with the output of EDITS (set args.preprocessed_using as 1):
 ```
 python classification.py
 ```
