@@ -22,8 +22,10 @@ for downstream node classification task.
 
 ## Log example for node classification
 
-(1) Directly do node classification task with the orginal attributed network:
-
+(1) Directly do node classification task with the orginal attributed network (set args.preprocessed_using as 0):
+```
+python classification.py
+```
 
 (2-1) Debiasing attributed network with EDITS:
 ```
