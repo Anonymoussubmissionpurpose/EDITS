@@ -22,10 +22,10 @@ for downstream node classification task.
 
 ## Log example for node classification
 
-*Directly do node classification task with the orginal attributed network:
+(1) Directly do node classification task with the orginal attributed network:
 
 
-*Debiasing attributed network with EDITS:
+(2-1) Debiasing attributed network with EDITS:
 ```
 python train.py
 ```
@@ -41,7 +41,7 @@ Average of all Wasserstein distance value across feature dimensions: 0.001098070
 100%|██████████| 500/500 [13:25<00:00,  1.61s/it]
 Preprocessed datasets saved.
 ```
-*Carry out node classification task with the output of EDITS:
+(2-2) Carry out node classification task with the output of EDITS:
 ```
 python classification.py
 ```
