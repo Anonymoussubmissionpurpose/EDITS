@@ -35,7 +35,7 @@ parser.add_argument('--preprocessed_using', type=int, default=0,
                     help='1 and 0 represent utilizing and not utilizing the preprocessed results.')
 parser.add_argument('--dataset', type=str, default='bail',
                     help='a dataset from credit, german and bail.')
-parser.add_argument('--epochs', type=int, default=1000,
+parser.add_argument('--epochs', type=int, default=1000,  # german: 1300 stability purpose
                     help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.001,
                     help='Initial learning rate.')
@@ -66,7 +66,7 @@ adj = normalize_scipy(adj)
 
 if args.preprocessed_using:
     A_debiased, features = sp.load_npz('pre_processed/A_debiased.npz'), torch.load("pre_processed/X_debiased.pt", map_location=torch.device('cpu')).cpu().float()
-    threshold_proportion = 0.012  # GCN: {credit: 0.02, german: 0.25, bail: 0.012}
+    threshold_proportion = 0.012  # GCN: {credit: 0.02, german: 0.25, bail: 0.018}
     the_con1 = (A_debiased - adj_ori).A
     the_con1 = np.where(the_con1 > np.max(the_con1) * threshold_proportion, 1 + the_con1 * 0, the_con1)
     the_con1 = np.where(the_con1 < np.min(the_con1) * threshold_proportion, -1 + the_con1 * 0, the_con1)
