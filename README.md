@@ -9,7 +9,7 @@ Library details can be found in requirements.txt.
 Notice: Cuda is enabled for default settings.
 
 ## Usage
-Default dataset for node classification is bail. A pre-processed dataset for bail is provided in *pre_processed*.
+Default dataset for node classification is bail. Pre-processed datasets (default for bail) are provided in *pre_processed*.
 Use as
 ```
 python train.py
